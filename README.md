@@ -8,7 +8,7 @@
 -   [Technical Highlights](#technical-highlights)
 -   [Conclusion](#conclusion)
 
-**Live demo** [click here](https://travel-list-react-app.netlify.app/)
+**Live demo** [click here](https://far-away-packing-list-app.netlify.app/)
 
 ![alt text](src/assets/overview.jpg)
 
