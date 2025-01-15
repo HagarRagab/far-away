@@ -1,70 +1,90 @@
-# Getting Started with Create React App
+# **Far Away: Travel Packing List App**
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## **Table of content:**
 
-## Available Scripts
+-   [Description](#description)
+-   [Key Features](#key-features)
+-   [Project Structure](#project-structure)
+-   [Technical Highlights](#technical-highlights)
+-   [Conclusion](#conclusion)
 
-In the project directory, you can run:
+**Live demo** [click here](https://travel-list-react-app.netlify.app/)
 
-### `npm start`
+![alt text](src/assets/overview.jpg)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+---
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### **Description:**
 
-### `npm test`
+Far Away is a React-based application designed to help users organize their travel packing list efficiently. The app allows users to add items with quantity and description, check or delete items, sort them by different criteria, and clear the entire list. Items are persistently stored in the browser's local storage, ensuring the list remains intact even after refreshing the page.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+---
 
-### `npm run build`
+### **Key Features:**
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. **Add Travel Items:**
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+    - Users can add items by entering the quantity and item name.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+2. **Item Management:**
 
-### `npm run eject`
+    - **Check Items:** Mark items as packed or unpacked.
+    - **Delete Items:** Remove specific items from the list.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+3. **Sorting Options:**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+    - Sort items by:
+        - **Packed Status:** Group packed and unpacked items.
+        - **Input Order:** Preserve the order in which items were added.
+        - **Description:** Alphabetically sort items by their name.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+4. **Clear List:**
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+    - Users can clear all items from the list with a single action.
 
-## Learn More
+5. **Clear List:**
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+    - Display statistics the number of items in the list in addition to the number and percentage of packed items
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+6. **Local Storage Integration:**
+    - Items are saved in the browser's local storage, ensuring persistence across sessions.
 
-### Code Splitting
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### **Project Structure:**
 
-### Analyzing the Bundle Size
+```
+src
+├── components
+│   ├── Actions.js        # Handles actions like sorting and clearing the list
+│   ├── Form.js           # Allows users to add new travel items
+│   ├── Item.js           # Displays individual items with check and delete options
+│   ├── Logo.js           # Displays the app's logo or branding
+│   ├── PackingList.js    # Manages the main list of travel items
+│   ├── Stats.js          # Displays statistics about packed and unpacked items
+├── App.js                # Root component organizing the application layout
+├── index.css             # Global styling for the application
+├── index.js              # Entry point for rendering the React app
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+---
 
-### Making a Progressive Web App
+### **Technical Highlights:**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+-   **React Features:**
 
-### Advanced Configuration
+    -   State management to handle items, sorting, and filtering.
+    -   Modular components for better reusability and scalability.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+-   **Local Storage:**
 
-### Deployment
+    -   Ensures the packing list is persistently stored, improving user experience.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+-   **User-Friendly Interface:**
+    -   Intuitive design with clear actions for adding, managing, and sorting items.
 
-### `npm run build` fails to minify
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### **Conclusion:**
+
+Far Away is a practical and user-friendly travel packing list app that simplifies the process of organizing items for trips. Its use of local storage, sorting options, and responsive design demonstrates strong React development skills and attention to user needs.

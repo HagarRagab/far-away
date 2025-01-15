@@ -1,25 +1,56 @@
-import logo from './logo.svg';
-import './App.css';
+import { useEffect, useState } from "react";
+import Form from "./components/Form.js";
+import Logo from "./components/Logo.js";
+import PackingList from "./components/PackingList.js";
+import Stats from "./components/Stats.js";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+export default function App() {
+    const [items, setItems] = useState(() => {
+        if (localStorage.getItem("travel-items"))
+            return JSON.parse(localStorage.getItem("travel-items"));
+        else return [];
+    });
+
+    useEffect(() => {
+        localStorage.setItem("travel-items", JSON.stringify(items));
+    }, [items]);
+
+    const handleAddItem = (quantity, description) => {
+        setItems((prevItems) => [
+            ...prevItems,
+            {
+                id: Math.random() * 1000,
+                quantity,
+                description,
+                packed: false,
+            },
+        ]);
+    };
+
+    const handleToggleItem = (id) => {
+        setItems((items) =>
+            items.map((item) =>
+                item.id === id ? { ...item, packed: !item.packed } : item
+            )
+        );
+    };
+
+    const handleDeleteItem = (id) =>
+        setItems((items) => items.filter((item) => item.id !== id));
+
+    const handleClearList = () => setItems([]);
+
+    return (
+        <div className="app">
+            <Logo />
+            <Form onAddItem={handleAddItem} />
+            <PackingList
+                items={items}
+                onToggleItem={handleToggleItem}
+                onDeleteItem={handleDeleteItem}
+                onClearList={handleClearList}
+            />
+            <Stats items={items} />
+        </div>
+    );
 }
-
-export default App;
